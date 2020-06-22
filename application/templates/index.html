@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="wrapper">
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="#">Welcome to Learning Hub </a></h2>
+						<p class="meta"><span class="date">June 21, 2020</span><span class="posted">Posted by <a href="#">imshubh17</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							<p>This is <strong>E-Learnig </strong>, Portal, Offer highly effective learning environments. Available in any location, with an internet connection;
+							 students can attend using their devices (e.g., computers, tablets, etc.). </p>
+							<p>project developed online portal web-application for students where connected couses link with official documentation.</p>
+							<img src="{{ url_for('static',filename='images/banner.png')}}" alt="Learnig Hub">
+						</div>
+					</div>					
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+
+				{% include "includes/slidebar.html" %}
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+
+{% endblock %}

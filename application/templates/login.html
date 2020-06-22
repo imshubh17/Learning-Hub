@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="wrapper">
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				<form name="login" action="" method="post" novalidate>
+                <fieldset class="form-group">
+                    <legend>{{title}}</legend> 
+                    {{ form.hidden_tag() }}
+
+                    <p>
+                        {{ form.email.label }}<br>
+                        {{ form.email(size=35) }}
+                        {% for error in form.email.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.password.label }}<br>
+                        {{ form.password(size=6) }}
+                        {% for error in form.password.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+
+                    <p>
+                        {{ form.submit() }}
+                    </p>
+                	</fieldset>
+            		</form>		
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				{% include "includes/slidebar.html" %}
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+{% endblock %}

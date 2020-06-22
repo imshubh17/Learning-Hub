@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="wrapper">
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					{% if not data %}
+                	<h1>You are not enrolled in any class.</h1>
+            		{% else %}
+					<h1>You are enrolled in:</h1>
+					<div>
+					<table class="table table-hover">
+					<thead>
+					<tr>
+						<th scope="col">Course ID</th>
+						<th scope="col">Title</th>
+						<th scope="col">Term</th>
+						<th scope="col">Start</th>
+					</tr>
+					</thead>				
+					<tbody>
+					{% for d in data %}
+					<tr>
+                	<td scope='row'>{{ d.course_id }}</td>
+					<td>{{ d.title }}</td>
+					<td>{{ d.term }}</td>
+                    <td><a href="{{ d.link }}" target="_blank"><button>Open</button></a></td>
+					</tr>
+					{% endfor %}
+					</tbody>
+                	</table>
+            		</div>			
+					<div style="clear: both;">&nbsp;</div>
+					{% endif %}
+				</div>
+				<!-- end #content -->
+				{% include "includes/slidebar.html" %}
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<div id="sidebar">
+					<div id="logo">
+						<h1><a href="#">Learning Hub </a></h1>
+						<p>Design by <a href="https://github.com/imshubh17">imshubh17</a></p>
+					</div>
+					<div id="menu">
+						<ul>
+							<li class="{% if index %}current_page_item{% endif %}"><a href="{{ url_for('index') }}">Home</a></li>
+							<li class="{% if courses %}current_page_item{% endif %}"><a href="{{ url_for('courses') }}">Courses</a></li>
+							<li class="{% if mycourse %}current_page_item{% endif %}"><a href="{{ url_for('mycourse') }}">My Course</a></li>
+							<li class="{% if about %}current_page_item{% endif %}"><a href="#">About</a></li>
+							{% if not session['username'] %}
+							<li class="{% if login %}current_page_item{% endif %}"><a href="{{ url_for('login') }}">Login</a></li>
+							{% endif %}
+							{% if session['username'] %}
+							<li><a href="{{ url_for('logout') }}">Logout</a></li>
+							{% else %}
+							<li class="{% if registration %}current_page_item{% endif %}"><a href="{{ url_for('register') }}">Registration</a></li>
+						    {% endif %}
+						</ul>
+					</div>
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" value="" />
+										<input type="submit" id="search-submit" value="GO" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						<li>
+							<h2>Letest Technologies</h2>
+							<p><li>Python</li><li>Golang</li><li>C++</li><li>Java</li><li>Machine Learning</li><li>AI</li><li>Data Science</li></p>
+						</li>
+						<li>
+							<h2>Categories</h2>
+							<ul>
+								<li><a href="#">Programming</a></li>
+								<li><a href="#">Web Development</a></li>
+								<li><a href="#">Data Science</a></li>
+								<li><a href="#">Operating System</a></li>								
+							</ul>
+						</li>					
+					</ul>
+				</div>
+				<!-- end #sidebar -->
